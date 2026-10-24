@@ -1,0 +1,8 @@
+node_modules/
+.env
+.DS_Store
+demo/*.webm
+demo/*.aiff
+demo/frames/
+playwright-report/
+test-results/

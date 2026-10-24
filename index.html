@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Onely Launchpad · 100 operators / 72 hours</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a href="#overview" class="brand">onely<span>↗</span></a>
+      <div class="brand-sub">OPERATOR LAUNCHPAD</div>
+      <div class="workspace">
+        <span class="workspace-dot"></span> Founding operator cohort
+        <small>招聘作业 · 独立原型</small>
+      </div>
+      <nav id="nav">
+        <button data-view="overview" class="active">
+          ◈ <span>增长总览</span><small>01</small></button
+        ><button data-view="leads">
+          ▤ <span>线索工作台</span><small>02</small></button
+        ><button data-view="outreach">
+          ↗ <span>触达与跟进</span><small>03</small></button
+        ><button data-view="cohort">
+          ◎ <span>入驻与培训</span><small>04</small></button
+        ><button data-view="playbook">
+          ✦ <span>72 小时行动书</span><small>05</small>
+        </button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="local-dot">● 本地运行 · 零 Token</div>
+        <p>轻量机器学习 + 规则分级<br />数据仅存在当前浏览器</p>
+        <a href="README.md" target="_blank">README / 需求与方案 ↗</a
+        ><a href="demo/" id="demo-link">4 分钟产品演示 ↗</a>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div>
+          <span class="breadcrumb">WORKSPACE</span><span class="slash">/</span
+          ><span id="view-label">增长总览</span>
+        </div>
+        <div class="top-actions">
+          <span class="demo-badge">虚构演示数据</span
+          ><button id="export-json" class="btn small">备份 JSON ↓</button
+          ><button id="reset" class="btn small">重置演示</button>
+        </div>
+      </header>
+      <div class="notice">
+        <span>◇</span> 招聘作业原型：状态为人工记录，未连接 Onely、邮件或社群
+        API；未触达真人。A 级为预筛选优先级，能力须经人工核验。
+      </div>
+      <div id="content"></div>
+    </main>
+    <dialog id="drawer"><div id="detail"></div></dialog>
+    <dialog id="import-dialog">
+      <form method="dialog"><button class="close">×</button></form>
+      <div class="eyebrow">IMPORT & RESOLVE</div>
+      <h2>把散落的线索，变成一个工作流。</h2>
+      <p class="muted">
+        CSV / JSON → 格式校验 → 邮箱与主页去重 → 机器学习信号 → 规则分级。
+      </p>
+      <label class="upload"
+        >选择 CSV / JSON 文件<input type="file" id="upload" accept=".csv,.json"
+      /></label>
+      <div class="import-buttons">
+        <button class="btn primary" id="import-fixture">
+          导入带重复的示例 CSV</button
+        ><a href="data/import-example.csv" download class="btn"
+          >下载 CSV 示例 ↓</a
+        >
+      </div>
+      <div id="import-result" aria-live="polite"></div>
+      <p class="muted fine">
+        跨身份冲突进入待复核；已有审核、退订、阶段和历史不会被导入覆盖。请勿向公开演示导入真实个人资料。
+      </p>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
